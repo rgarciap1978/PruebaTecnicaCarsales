@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Character } from 'src/app/model/character';
 import { CharacterService } from 'src/app/service/character.service';
 
@@ -13,9 +13,12 @@ export class SingleCharacterComponent {
 
   id: number;
   character: Character;
+  idOrigen: string;
+  idLocation: string;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private characterService: CharacterService,
     private location: Location
   ) {}

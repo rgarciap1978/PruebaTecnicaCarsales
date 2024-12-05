@@ -24,7 +24,7 @@ app.use('/api/episodes', episodeRoutes);
 app.use('/api/locations', locationRoutes);
 
 // MANEJO DE EXCEPCIONES
-//app.use(require('./utils/errorHandler'));
+app.use(require('./utils/errorHandler'));
 
 const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {

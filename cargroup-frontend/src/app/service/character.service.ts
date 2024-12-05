@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Character } from '../model/character';
-import { filterCharacterDTO } from '../dto/filterCharacterDTO';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +23,5 @@ export class CharacterService {
 
   getMultipleCharacters(ids: string) {
     return this.http.get(`${this.url}/${ids}`);
-  }
-
-  filterCharacters(filter: filterCharacterDTO) {
-
   }
 }

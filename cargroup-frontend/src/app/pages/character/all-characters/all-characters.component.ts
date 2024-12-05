@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharactersDTO } from 'src/app/dto/charactersDTO';
 import { Character } from 'src/app/model/character';
 import { Paginator } from 'src/app/model/paginator';
@@ -15,8 +16,13 @@ export class AllCharactersComponent {
   results: Character[] = [];
 
   searchInput: string = '';
+  prevPage: string;
+  nextPage: string;
 
-  constructor(private characterService: CharacterService) {}
+  constructor(
+    private router: Router,
+    private characterService: CharacterService
+  ) {}
 
   ngOnInit(): void {
     this.loadPage();
@@ -32,11 +38,14 @@ export class AllCharactersComponent {
   multipleSearch(){
 
     let ids = this.searchInput;
-    console.log('multipleSearch: ' + ids);
-
-    this.characterService.getMultipleCharacters(ids).subscribe((data: Character[]) => {
-      this.results = data;
-    })
+    let n = ids.split(',');
+    if (n.length > 1) {
+      this.characterService.getMultipleCharacters(ids).subscribe((data: Character[]) => {
+        this.results = data;
+      });
+    }else{
+      this.router.navigate([`pages/character/single-character/${n[0]}`]);
+    }
 
   }
 

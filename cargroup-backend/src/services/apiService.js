@@ -5,6 +5,6 @@ exports.fetchData = async (url) => {
         const response = await axios.get(url);
         return response.data;
     } catch(e) {
-        throw new Error(`Error fetching data from API: ${url}`)
+        throw new Error(`Error fetching data from API: ${e}`)
     }
 };

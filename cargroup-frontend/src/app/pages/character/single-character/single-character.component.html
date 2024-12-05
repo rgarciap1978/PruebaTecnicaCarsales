@@ -1,12 +1,12 @@
 <div class="container">
-  <div *ngIf="character" class="character-detail">
-    <img [src]="character.image" [alt]="character.name" class="character-image">
+  <div *ngIf="character" class="detail">
+    <img [src]="character.image" [alt]="character.name" class="image">
     <h1>{{ character.name }}</h1>
-    <p><strong>Status:</strong> {{ character.status }}</p>
-    <p><strong>Species:</strong> {{ character.species }}</p>
-    <p><strong>Gender:</strong> {{ character.gender }}</p>
-    <p><strong>Origin:</strong> {{ character.origin.name }}</p>
-    <p><strong>Location:</strong> {{ character.location.name }}</p>
+    <p><strong>Estado:</strong> {{ character.status }}</p>
+    <p><strong>Especie:</strong> {{ character.species }}</p>
+    <p><strong>Género:</strong> {{ character.gender }}</p>
+    <p><strong>Origen:</strong> {{ character.origin.name }}</p>
+    <p><strong>Ubicación:</strong> {{ character.location.name }}</p>
     <button (click)="goBack()">Volver</button>
   </div>
 

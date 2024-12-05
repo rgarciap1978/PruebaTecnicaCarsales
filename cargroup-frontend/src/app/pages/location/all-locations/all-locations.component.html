@@ -10,9 +10,8 @@
       <div *ngFor="let location of results" class="grid-item">
         <a [routerLink]="['/pages/location/single-location/', location.id]">
           <h4>{{ location.name }}</h4>
-          <p>Air Date: {{ location.type }}</p>
-          <p>Episode: {{ location.dimension }}</p>
         </a>
+
       </div>
     </div>
   </form>

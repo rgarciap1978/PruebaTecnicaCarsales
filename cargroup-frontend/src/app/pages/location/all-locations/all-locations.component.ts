@@ -3,6 +3,7 @@ import { WhereaboutsDTO } from 'src/app/dto/whereaboutsDTO';
 import { Whereabouts } from 'src/app/model/whereabouts';
 import { Paginator } from 'src/app/model/paginator';
 import { LocationService } from 'src/app/service/location.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-locations',
@@ -16,7 +17,10 @@ export class AllLocationsComponent {
 
   searchInput: string = '';
 
-  constructor(private locationService: LocationService) {}
+  constructor(
+    private router: Router,
+    private locationService: LocationService
+  ) {}
 
   ngOnInit(): void {
     this.loadPage();
@@ -33,12 +37,14 @@ export class AllLocationsComponent {
   multipleSearch(){
 
     let ids = this.searchInput;
-    console.log('multipleSearch: ' + ids);
-
-    this.locationService.getMultipleLocations(ids).subscribe((data: Whereabouts[]) => {
-      this.results = data;
-    })
-
+    let n = ids.split(',');
+    if (n.length > 1) {
+      this.locationService.getMultipleLocations(ids).subscribe((data: Whereabouts[]) => {
+        this.results = data;
+      });
+    }else{
+      this.router.navigate([`pages/location/single-location/${n[0]}`]);
+    }
   }
 
   resetForm(){

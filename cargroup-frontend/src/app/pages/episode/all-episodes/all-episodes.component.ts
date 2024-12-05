@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { EpisodesDTO } from 'src/app/dto/episodesDTO';
 import { Episode } from 'src/app/model/episode';
 import { Paginator } from 'src/app/model/paginator';
@@ -16,7 +17,10 @@ export class AllEpisodesComponent {
 
   searchInput: string = '';
 
-  constructor(private episodeService: EpisodeService) {}
+  constructor(
+    private router: Router,
+    private episodeService: EpisodeService
+  ) {}
 
   ngOnInit(): void {
     this.loadPage();
@@ -32,11 +36,14 @@ export class AllEpisodesComponent {
   multipleSearch(){
 
     let ids = this.searchInput;
-
-    this.episodeService.getMultipleEpisodes(ids).subscribe((data: Episode[]) => {
-      this.results = data;
-    })
-
+    let n = ids.split(',');
+    if (n.length > 1) {
+      this.episodeService.getMultipleEpisodes(ids).subscribe((data: Episode[]) => {
+        this.results = data;
+      });
+    }else{
+      this.router.navigate([`pages/episode/single-episode/${n[0]}`]);
+    }
   }
 
   resetForm(){

@@ -29,27 +29,3 @@ exports.getLocationsMultiple = async (req, res, next) => {
         next(e);
     }
 };
-
-exports.filterLocations = async (req, res, next) => {
-
-    const { name, status, species, type, gender } = req.query;
-    let url = 'https://rickandmortyapi.com/api/location/'
-
-    const params = new URLSearchParams();
-    name && params.append('name', name);
-    status && params.append('status', status);
-    species && params.append('species', species);
-    type && params.append('type', type);
-    gender && params.append('gender', gender);
-
-    if(params.toString()){
-        url += `?${params.toString()}`; 
-    }
-    
-    try {
-        const data = await apiService.fetchData(url);
-        res.json(data);
-    } catch(e) {
-        next(e);
-    }
-};

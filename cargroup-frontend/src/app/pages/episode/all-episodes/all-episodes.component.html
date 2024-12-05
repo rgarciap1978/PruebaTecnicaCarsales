@@ -9,9 +9,8 @@
       <div *ngFor="let episode of results" class="grid-item">
         <a [routerLink]="['/pages/episode/single-episode/', episode.id]">
           <h4>{{ episode.name }}</h4>
-          <p>Air Date: {{ episode.air_date }}</p>
-          <p>Episode: {{ episode.episode }}</p>
         </a>
+
       </div>
     </div>
   </form>
