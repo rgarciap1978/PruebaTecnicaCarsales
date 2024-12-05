@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Episodios</h1>
+  <form (ngSubmit)="multipleSearch()">
+    <input type="text" name="search" placeholder="Buscar por IDs (separados por comas)" [(ngModel)]="searchInput" />
+    <button type="submit">Buscar</button>
+    <button (click)="resetForm()" type="button">Limpiar</button>
+
+    <div class="grid-container">
+      <div *ngFor="let episode of results" class="grid-item">
+        <a [routerLink]="['/pages/episode/single-episode/', episode.id]">
+          <h4>{{ episode.name }}</h4>
+          <p>Air Date: {{ episode.air_date }}</p>
+          <p>Episode: {{ episode.episode }}</p>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

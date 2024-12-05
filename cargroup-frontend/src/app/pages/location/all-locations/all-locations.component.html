@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Ubicaciones</h1>
+
+  <form (ngSubmit)="multipleSearch()">
+    <input type="text" name="search" placeholder="Buscar por IDs (separados por comas)" [(ngModel)]="searchInput" />
+    <button type="submit">Buscar</button>
+    <button (click)="resetForm()" type="button">Limpiar</button>
+
+    <div class="grid-container">
+      <div *ngFor="let location of results" class="grid-item">
+        <a [routerLink]="['/pages/location/single-location/', location.id]">
+          <h4>{{ location.name }}</h4>
+          <p>Air Date: {{ location.type }}</p>
+          <p>Episode: {{ location.dimension }}</p>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

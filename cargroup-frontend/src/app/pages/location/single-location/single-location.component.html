@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngIf="whereabouts" class="whereabouts-detail">
+    <h1>{{ whereabouts.name }}</h1>
+    <p><strong>Type:</strong> {{ whereabouts.type }}</p>
+    <p><strong>Dimension:</strong> {{ whereabouts.dimension }}</p>
+
+    <button (click)="goBack()">Volver</button>
+  </div>
+
+</div>

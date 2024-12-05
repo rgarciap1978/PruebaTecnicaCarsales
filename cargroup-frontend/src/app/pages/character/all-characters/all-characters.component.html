@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Personajes</h1>
+  <form (ngSubmit)="multipleSearch()">
+    <input type="text" name="search" placeholder="Buscar por IDs (separados por comas)" [(ngModel)]="searchInput" />
+    <button type="submit">Buscar</button>
+    <button (click)="resetForm()" type="button">Limpiar</button>
+
+    <div class="grid-container">
+
+      <div *ngFor="let character of results" class="grid-item">
+        <a [routerLink]="['/pages/character/single-character/', character.id]">
+          <img [src]="character.image" [alt]="character.name" class="character-image">
+          <h4>{{ character.name }}</h4>
+          <p>Status: {{ character.status }}</p>
+          <p>Species: {{ character.species }}</p>
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <div *ngIf="episode" class="episode-detail">
+    <h1>{{ episode.name }}</h1>
+    <p><strong>Air date:</strong> {{ episode.air_date }}</p>
+    <p><strong>episode:</strong> {{ episode.episode }}</p>
+
+    <button (click)="goBack()">Volver</button>
+  </div>
+
+</div>
