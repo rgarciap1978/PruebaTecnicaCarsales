@@ -1,7 +1,14 @@
-import { Character } from "../model/character";
-import { Paginator } from "../model/paginator";
-
 export class CharactersDTO {
-  info: Paginator;
-  results: Character[];
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: {name: string, url: string};
+  location: {name: string, url: string};
+  image: string;
+  episode: string[];
+  url: string;
+  created: string;
 }

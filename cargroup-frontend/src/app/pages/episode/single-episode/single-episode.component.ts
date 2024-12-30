@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { EpisodesDTO } from 'src/app/dto/episodesDTO';
+import { GenericDTO } from 'src/app/dto/genericDTO';
 import { Episode } from 'src/app/model/episode';
 import { EpisodeService } from 'src/app/service/episode.service';
 
@@ -11,7 +13,19 @@ import { EpisodeService } from 'src/app/service/episode.service';
 })
 export class SingleEpisodeComponent {
   id: number;
-  episode: Episode;
+  response: GenericDTO<EpisodesDTO> = {
+    Success: false,
+    ErrorMessage: '',
+    results: {
+      id: 0,
+      name: '',
+      air_date: '',
+      episode: '',
+      characters: [],
+      url: '',
+      created: ''
+    }
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -23,8 +37,9 @@ export class SingleEpisodeComponent {
     this.route.params.subscribe(data => {
       this.id = data['id'];
     });
-    this.episodeService.getEpisodeById(this.id).subscribe(data => {
-      this.episode = data;
+
+    this.episodeService.findById(this.id).subscribe(data => {
+      this.response = data;
     });
   }
 

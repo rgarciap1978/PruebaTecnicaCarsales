@@ -1,8 +1,8 @@
 <div class="container">
-  <div *ngIf="episode" class="detail">
-    <h1>{{ episode.name }}</h1>
-    <p><strong>Emitido:</strong> {{ episode.air_date }}</p>
-    <p><strong>Episodio:</strong> {{ episode.episode }}</p>
+  <div *ngIf="response" class="detail">
+    <h1>{{ response.results.name }}</h1>
+    <p><strong>Emitido:</strong> {{ response.results.air_date }}</p>
+    <p><strong>Episodio:</strong> {{ response.results.episode }}</p>
 
     <button (click)="goBack()">Volver</button>
   </div>

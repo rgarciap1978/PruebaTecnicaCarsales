@@ -1,7 +1,11 @@
 <div class="container">
   <h1>Episodios</h1>
-  <form (ngSubmit)="multipleSearch()">
+  <form (ngSubmit)="onSubmit()">
     <input type="text" name="search" placeholder="Buscar por IDs (separados por comas)" [(ngModel)]="searchInput" />
+    <hr />
+    <input type="text" name="search" placeholder="Name" [(ngModel)]="searchName" />
+    <input type="text" name="search" placeholder="Episode" [(ngModel)]="searchEpisode" />
+    <hr />
     <button type="submit">Buscar</button>
     <button (click)="resetForm()" type="button">Limpiar</button>
 
@@ -10,8 +14,10 @@
         <a [routerLink]="['/pages/episode/single-episode/', episode.id]">
           <h4>{{ episode.name }}</h4>
         </a>
-
       </div>
     </div>
+    <hr />
+    <button type="button" (click)="onPrevious()" [disabled]="!enabledButtonPrevious" >Anterior</button>
+    <button type="button" (click)="onNext()" [disabled]="!enabledButtonNext" >Siguiente</button>
   </form>
 </div>

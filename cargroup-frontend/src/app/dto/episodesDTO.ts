@@ -1,7 +1,9 @@
-import { Episode } from "../model/episode";
-import { Paginator } from "../model/paginator";
-
 export class EpisodesDTO {
-  info: Paginator;
-  results: Episode[];
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters: string[];
+  url: string;
+  created: string;
 }

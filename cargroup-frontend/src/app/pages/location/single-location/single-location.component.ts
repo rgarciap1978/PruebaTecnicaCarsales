@@ -1,7 +1,9 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Whereabouts } from 'src/app/model/whereabouts';
+import { GenericDTO } from 'src/app/dto/genericDTO';
+import { SettingsDTO } from 'src/app/dto/settingsDTO';
+import { Setting } from 'src/app/model/setting';
 import { LocationService } from 'src/app/service/location.service';
 
 @Component({
@@ -12,7 +14,19 @@ import { LocationService } from 'src/app/service/location.service';
 export class SingleLocationComponent {
 
   id: number;
-  whereabouts: Whereabouts;
+  response: GenericDTO<SettingsDTO> = {
+    Success: false,
+    ErrorMessage: '',
+    results: {
+      id: 0,
+      name: '',
+      type: '',
+      dimension: '',
+      residents: [],
+      url: '',
+      created: ''
+    }
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -24,13 +38,13 @@ export class SingleLocationComponent {
     this.route.params.subscribe(data => {
       this.id = data['id'];
     });
-    this.locationService.getLocationById(this.id).subscribe(data => {
-      this.whereabouts = data;
+
+    this.locationService.findById(this.id).subscribe(data => {
+      this.response = data;
     })
   }
 
   goBack() {
     this.location.back();
   }
-
 }

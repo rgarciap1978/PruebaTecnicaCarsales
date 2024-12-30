@@ -1,4 +1,4 @@
-export class Whereabouts {
+export class Setting {
   id: number;
   name: string;
   type: string;
@@ -7,4 +7,3 @@ export class Whereabouts {
   url: string;
   created: string;
 }
-

@@ -1,8 +1,8 @@
 <div class="container">
-  <div *ngIf="whereabouts" class="detail">
-    <h1>{{ whereabouts.name }}</h1>
-    <p><strong>Tipo:</strong> {{ whereabouts.type }}</p>
-    <p><strong>Dimensión:</strong> {{ whereabouts.dimension }}</p>
+  <div *ngIf="response" class="detail">
+    <h1>{{ response.results.name }}</h1>
+    <p><strong>Tipo:</strong> {{ response.results.type }}</p>
+    <p><strong>Dimensión:</strong> {{ response.results.dimension }}</p>
 
     <button (click)="goBack()">Volver</button>
   </div>

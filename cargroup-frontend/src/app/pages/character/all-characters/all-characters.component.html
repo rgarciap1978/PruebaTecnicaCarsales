@@ -1,18 +1,36 @@
 <div class="container">
   <h1>Personajes</h1>
-  <form (ngSubmit)="multipleSearch()">
+  <form (ngSubmit)="onSubmit()">
     <input type="text" name="search" placeholder="Buscar por IDs (separados por comas)" [(ngModel)]="searchInput" />
+    <hr />
+    <input type="text" name="search" placeholder="Name" [(ngModel)]="searchName" />
+    <select name="search" [(ngModel)]="searchStatus" >
+      <option value="Alive">Alive</option>
+      <option value="Dead">Dead</option>
+      <option value="Unknown">Unknown</option>
+    </select>
+    <input type="text" name="search" placeholder="Species" [(ngModel)]="searchSpecies" />
+    <input type="text" name="search" placeholder="Type" [(ngModel)]="searchType" />
+    <select name="search" [(ngModel)]="searchGender" >
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+      <option value="Genderless">Genderless</option>
+      <option value="Unknown">Unknown</option>
+    </select>
+    <hr />
     <button type="submit">Buscar</button>
     <button (click)="resetForm()" type="button">Limpiar</button>
 
     <div class="grid-container">
-
-      <div *ngFor="let character of results" class="grid-item">
-        <a [routerLink]="['/pages/character/single-character/', character.id]">
-          <img [src]="character.image" [alt]="character.name" class="grid-image">
+      <div *ngFor="let item of results" class="grid-item">
+        <a [routerLink]="['/pages/character/single-character/', item.id]">
+          <img [src]="item.image" [alt]="item.name" class="grid-image">
         </a>
-        <h4>{{ character.name }}</h4>
+        <h4>{{ item.name }}</h4>
       </div>
     </div>
+    <hr />
+    <button type="button" (click)="onPrevious()" [disabled]="!enabledButtonPrevious" >Anterior</button>
+    <button type="button" (click)="onNext()" [disabled]="!enabledButtonNext" >Siguiente</button>
   </form>
 </div>

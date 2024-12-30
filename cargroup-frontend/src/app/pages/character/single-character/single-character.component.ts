@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Character } from 'src/app/model/character';
+import { ActivatedRoute } from '@angular/router';
+import { CharactersDTO } from 'src/app/dto/charactersDTO';
+import { GenericDTO } from 'src/app/dto/genericDTO';
 import { CharacterService } from 'src/app/service/character.service';
 
 @Component({
@@ -12,13 +13,27 @@ import { CharacterService } from 'src/app/service/character.service';
 export class SingleCharacterComponent {
 
   id: number;
-  character: Character;
-  idOrigen: string;
-  idLocation: string;
+  response: GenericDTO<CharactersDTO> = {
+    Success: false,
+    ErrorMessage: '',
+    results: {
+      id: 0,
+      name: '',
+      status: '',
+      species: '',
+      type: '',
+      gender: '',
+      origin: {name: '', url: ''},
+      location: {name: '', url: ''},
+      image: '',
+      episode: [],
+      url: '',
+      created: ''
+    }
+  }
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private characterService: CharacterService,
     private location: Location
   ) {}
@@ -26,9 +41,10 @@ export class SingleCharacterComponent {
   ngOnInit(): void {
     this.route.params.subscribe(data => {
       this.id = data['id'];
-    })
-    this.characterService.getCharacterById(this.id).subscribe(data => {
-      this.character = data;
+    });
+
+    this.characterService.findById(this.id).subscribe(data => {
+      this.response = data
     });
   }
 
