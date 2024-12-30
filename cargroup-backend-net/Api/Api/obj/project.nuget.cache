@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OtQn9GvDIEY=",
+  "success": true,
+  "projectFilePath": "C:\\Proyectos\\sources\\PruebaTecnicaCarsales\\cargroup-backend-net\\Api\\Api\\Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rogar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.0\\microsoft.aspnetcore.openapi.9.0.0.nupkg.sha512",
+    "C:\\Users\\rogar\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

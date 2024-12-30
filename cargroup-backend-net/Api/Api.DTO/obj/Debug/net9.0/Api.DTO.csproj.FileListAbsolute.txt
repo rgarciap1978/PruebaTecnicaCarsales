@@ -1,0 +1,16 @@
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.csproj.AssemblyReference.cache
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.AssemblyInfoInputs.cache
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.AssemblyInfo.cs
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.csproj.CoreCompileInputs.cache
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.sourcelink.json
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\bin\Debug\net9.0\Api.DTO.deps.json
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\bin\Debug\net9.0\Api.DTO.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\bin\Debug\net9.0\Api.DTO.pdb
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\bin\Debug\net9.0\Api.Entities.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\bin\Debug\net9.0\Api.Entities.pdb
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.csproj.Up2Date
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\refint\Api.DTO.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\Api.DTO.pdb
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.DTO\obj\Debug\net9.0\ref\Api.DTO.dll

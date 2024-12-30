@@ -1,0 +1,12 @@
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\bin\Debug\net9.0\Api.Entities.deps.json
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\bin\Debug\net9.0\Api.Entities.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\bin\Debug\net9.0\Api.Entities.pdb
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.AssemblyInfoInputs.cache
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.AssemblyInfo.cs
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.csproj.CoreCompileInputs.cache
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.sourcelink.json
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\refint\Api.Entities.dll
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\Api.Entities.pdb
+C:\Proyectos\sources\PruebaTecnicaCarsales\cargroup-backend-net\Api\Api.Entities\obj\Debug\net9.0\ref\Api.Entities.dll
