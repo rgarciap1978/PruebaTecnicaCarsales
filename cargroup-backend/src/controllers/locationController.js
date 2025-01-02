@@ -1,31 +1,109 @@
 const apiService = require('../services/apiService');
-const urlBase = 'https://rickandmortyapi.com/api/location';
 
-exports.getLocations = async (req, res, next) => {
+exports.get = async (req, res, next) => {
     try {
-        const data = await apiService.fetchData(urlBase);
-        res.json(data);
+        const data = await apiService.fetchData('/location');
+        if(data.results === null) { 
+            res.status(204).json({
+            success: false
+        });
+    } else {
+        const info = data.info;
+        info.prev = getPage(info.prev);
+        info.next = getPage(info.next);
+
+        res.status(200).json({
+            success: true,
+            errorMessage: '',
+            info: info,
+            results: data.results
+        });
+    }
     } catch(e) {
         next(e);
     }
 };
 
-exports.getLocationById = async (req, res, next) => {
+exports.getById = async (req, res, next) => {
     try {
-        const data = await apiService.fetchData(`${urlBase}/${req.params.id}`);
-        res.json(data);
+        const data = await apiService.fetchData(`/location/${req.params.id}`);
+        if (data === null) {
+            res.status(404).join({
+                success: false,
+                errorMessage: 'No se encontró la ubicación.'
+            });
+        } else {
+            res.status(200).json({
+                success: true,
+                errorMessage: '',
+                results: data
+            });
+        }
     } catch(e) {
         next(e);
     }
 };
 
-exports.getLocationsMultiple = async (req, res, next) => {
+exports.getMultiple = async (req, res, next) => {
 
     const ids = req.query.ids;
+    
     try {
-        const data = await apiService.fetchData(`${urlBase}/${ids.join(',')}`);
-        res.json(data);
+        const data = await apiService.fetchData(`/location/${ids}`);
+        if (data.length === 0) {
+            res.status(204).end();
+        } else {
+            res.status(200).json({
+                success: true,
+                errorMessage: '',
+                results: data
+            });
+        }
     } catch(e) {
         next(e);
     }
 };
+
+exports.filter = async (req, res, next) => {
+    const { page, name, type, dimension } = req.query;
+
+    const params = [
+        page && `page=${page}`,
+        name && `name=${name}`,
+        type && `type=${type}`,
+        dimension && `dimension=${dimension}`
+    ].filter(Boolean)
+    .join('&');
+    
+    try {
+        const data = await apiService.fetchData(`/location/${params ? `?${params}` : ''}`);
+        if (data.results === null) {
+            res.status(204).json({
+                success: false,
+                errorMessage: 'No se encontraron personajes'
+            });
+        } else {
+            const info = data.info;
+            info.prev = getPage(info.prev);
+            info.next = getPage(info.next);
+
+            const results = data.results;
+
+            res.status(200).json({
+                success: true,
+                errorMessage: '',
+                info: info,
+                results: results
+            });
+        }
+    } catch(e) {
+        next(e);
+    }
+};
+
+getPage = (url) => {
+    if (url === null) return '';
+    const params = new URL(url).searchParams;
+    
+    return params.get('page');
+}

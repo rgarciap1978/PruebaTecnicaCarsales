@@ -65,13 +65,12 @@ exports.getMultiple = async (req, res, next) => {
 };
 
 exports.filter = async (req, res, next) => {
-    const { page, name, type, dimension } = req.query;
+    const { page, name, episode } = req.query;
 
     const params = [
         page && `page=${page}`,
         name && `name=${name}`,
-        type && `type=${type}`,
-        dimension && `dimension=${dimension}`
+        episode && `episode=${episode}`
     ].filter(Boolean)
     .join('&');
 
