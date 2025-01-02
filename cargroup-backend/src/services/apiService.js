@@ -1,10 +1,16 @@
 const axios = require('axios');
+require('dotenv').config();
 
-exports.fetchData = async (url) => {
-    try{
-        const response = await axios.get(url);
+const apiClient = axios.create({
+    baseURL: process.env.BASE_URL,
+});
+
+exports.fetchData = async (endpoint) => {
+    try {
+        const response = await apiClient.get(endpoint);
+
         return response.data;
-    } catch(e) {
-        throw new Error(`Error fetching data from API: ${e}`)
+    } catch (error) {
+        throw new Error(error.response?.data?.error || 'Error fetching data');
     }
 };

@@ -19,9 +19,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // RUTAS SERVICIOS
-app.use('/api/characters', characterRoutes);
-app.use('/api/episodes', episodeRoutes);
-app.use('/api/locations', locationRoutes);
+app.use('/api/character', characterRoutes);
+app.use('/api/episode', episodeRoutes);
+app.use('/api/location', locationRoutes);
 
 // MANEJO DE EXCEPCIONES
 app.use(require('./utils/errorHandler'));
