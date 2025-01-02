@@ -8,7 +8,6 @@ const apiClient = axios.create({
 exports.fetchData = async (endpoint) => {
     try {
         const response = await apiClient.get(endpoint);
-
         return response.data;
     } catch (error) {
         throw new Error(error.response?.data?.error || 'Error fetching data');

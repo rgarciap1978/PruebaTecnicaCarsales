@@ -27,7 +27,6 @@ exports.get = async (req, res, next) => {
 exports.getById = async (req, res, next) => {
     try {    
         const data = await apiService.fetchData(`/character/${req.params.id}`);
-        
         if (data === null) {
             res.status(404).join({
                 success: false,
@@ -51,7 +50,6 @@ exports.getMultiple = async (req, res, next) => {
     
     try {
         const data = await apiService.fetchData(`/character/${ids}`);
-
         if (data.length === 0) {
             res.status(204).end();
         } else {
@@ -67,7 +65,6 @@ exports.getMultiple = async (req, res, next) => {
 };
 
 exports.filter = async (req, res, next) => {
-
     const { page, name, status, species, type, gender } = req.query;
 
     const params = [
